@@ -7,6 +7,9 @@ Will check for flag to update}
 \usage{
 update_series_dir(dir)
 }
+\arguments{
+\item{dir}{a dataframe which is a directory of category IDs to update}
+}
 \description{
 Expand a directory of category API requests
 Will check for flag to update

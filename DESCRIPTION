@@ -3,9 +3,9 @@ Title: A Wrapper for the Energy Information Administration (EIA) API in R
 Version: 0.0.0.9000
 Authors@R: person("Jameel", "Alsalam", email = "jalsalam@gmail.com", role = c("aut", "cre"))
 Description: What the package does (one paragraph).
-Depends: R (>= 3.4.1)
+Depends: R (>= 3.4.0)
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
-Imports: httr, jsonlite, purrr
+Imports: httr, jsonlite, purrr, magrittr, dplyr, tibble
 RoxygenNote: 6.0.1

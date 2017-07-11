@@ -7,6 +7,9 @@ Will check whether information is old or updated prior to sending a request}
 \usage{
 update_cat_dir(dir)
 }
+\arguments{
+\item{dir}{a dataframe which is a directory of category IDs to update}
+}
 \description{
 Update a directory of category API requests
 Will check whether information is old or updated prior to sending a request
