@@ -46,7 +46,7 @@ getEIAcat <- function(id, deep = FALSE, return = "simple") {
     names(childseries) <- c("child_series_id", "child_series_name", "child_series_f", "child_series_units", "child_series_updated")
   } else {
     childseries <- tibble::tibble(
-      child_series_id = integer(),
+      child_series_id = character(),
       child_series_name = character(),
       child_series_f = character(),
       child_series_units = character(),

@@ -1,32 +1,20 @@
 # test-funs.R
 
-# API url for AEO17 category query: http://api.eia.gov/category/?api_key=YOUR_API_KEY_HERE&category_id=2227112
+#TODO
+# - Modify getEIAcat to use httr::modify_url instead of paste
+# httr::modify_url("http://api.eia.gov/", path="category", query = )
 
-httr::modify_url("http://api.eia.gov/", path="category", query = )
+# figure out how to parse the series ID names into metadata
+# improve NA parsing
+# improve the key handling as recommended by httr vignette
+# implement getEIAseries -> series query
+# implement getEIAupdate -> updates query
+# implement tests
+# do I still want the update and results caching features?
+# do I want a version of the functions that returns a bigger object?
 
+#
 
-catAEO17 <- getEIAcat(id=2227112) # right now yields an s3 object
-catAEO17$content
-
-subcats <- catAEO17$content$childcategories[[1]][["child_category_id"]][1:2] %>%
-  map(., getEIAcat)
-
-typeof(catAEO17$content)
-typeof(subcats[[1]]$content)
-
-cats <- bind_rows(catAEO17$content, map(subcats, "content"))
-
-cats_unnest <- cats %>% unnest()
-
-setdiff(cats_unnest$child_category_id, cats_unnest$category_id)
-
-subcats_not_yet <- setdiff(cats_unnest$child_category_id, cats_unnest$category_id)
-
-subcats_EIA <- map(subcats_not_yet, getEIAcat)
-cats_EIA <- bind_rows(map(subcats_EIA, "content"))
-
-cats2 <- bind_rows(cats, cats_EIA)
-cats2u <- cats2 %>% unnest()
 
 # set global env for testing getEIAcat:
 
@@ -35,7 +23,10 @@ id <- 2227112
 
 cat_ids_of_interest <- c(
   2227289, #Energy-Related Carbon Dioxide Emissions by Sector and Source (million metric tons carbon dioxide, unless otherwise noted), United States - Ref case - AEO17
-  2228110 # Energy-Related Carbon Dioxide Emissions by Sector and Source (million metric tons carbon dioxide, unless otherwise noted), United States - no CPP case - AEO17
+  2228110, # Energy-Related Carbon Dioxide Emissions by Sector and Source (million metric tons carbon dioxide, unless otherwise noted), United States - no CPP case - AEO17
+  2227324, #Reference, macro
+  2227430, #Reference, coal production by region and type
+
 )
 
 ##########
