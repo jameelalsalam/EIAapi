@@ -26,7 +26,6 @@ srs %>% distinct(topic) %>% View()
 srs %>% distinct(sector) %>% View()
 
 srs %>%
-  filter(topic == "EMI",
-         units_2 == "MILLMTCO2EQ") %>%
+  filter(v2 == "CO2") %>%
   distinct(child_series_id, .keep_all = TRUE) %>%
   View()
