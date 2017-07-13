@@ -9,12 +9,9 @@ magrittr::`%>%`
 #' Get information on categories from the EIA API
 #'
 #' @param id string EIA category ID
-#' @param deep indicates whether to recursively query subcategories
-#' @param return flag for type of return object: simple, content, raw, or full.
 #' @importFrom magrittr %>%
 #' @export
-
-getEIAcat <- function(id, deep = FALSE, return = "simple") {
+getEIAcat <- function(id) {
 
   if (is.na(key)) {
     stop("Please set variable \"key\" in the global environment with your API key") }

@@ -26,6 +26,10 @@ srs %>% distinct(topic) %>% View()
 srs %>% distinct(sector) %>% View()
 
 srs %>%
-  filter(v2 == "CO2") %>%
+  filter(v2 == "CO2",
+         scenario == "REF2017") %>%
   distinct(child_series_id, .keep_all = TRUE) %>%
-  View()
+  slice(1:3) %>%
+  pull(child_series_id) -> some_series
+
+.url_EIA_series(some_series)
