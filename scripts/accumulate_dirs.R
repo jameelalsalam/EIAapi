@@ -9,7 +9,7 @@ cats_asked        <- c(EIA_cats$category_id)
 cats_in_dir       <- unique(unnest(EIA_cats, childcategories)$child_category_id)
 cats_not_asked    <- setdiff(cats_in_dir, cats_asked)
 
-next_chunk  <- sample(cats_not_asked, size = 300)
+next_chunk  <- sample(cats_not_asked, size = 400)
 chunk_calls <- getEIAcats(next_chunk)
 
 EIA_cats <- bind_rows(EIA_cats, chunk_calls)

@@ -1,4 +1,5 @@
 # EIAapi
+
 A wrapper for the Energy Information Administration (EIA) API in R
 
 The author of this package is not affiliated with the EIA.
