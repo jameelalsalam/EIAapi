@@ -3,7 +3,7 @@
 map_chr(AEO17_cats$childseries, ~typeof(.$child_series_id))
 
 childseries_new <- AEO17_cats$childseries %>%
-  map(., ~mutate(., child_series_id = as.character(child_series_id)))
+  map(., ~dplyr::mutate(., child_series_id = as.character(child_series_id)))
 
 AEO17_new <- AEO17_cats %>% {
   tibble(
@@ -17,7 +17,7 @@ AEO17_new <- AEO17_cats %>% {
 }
 
 AEO17_cats$childseries[[1]] %>%
-  mutate(child_series_id = as.character(child_series_id))
+  dplyr::mutate(child_series_id = as.character(child_series_id))
 
 all.equal(AEO17_cats$childseries[400:500], AEO17_new$childseries[400:500])
 AEO17_cats <- AEO17_new

@@ -4,7 +4,7 @@ Version: 0.0.0.9000
 Authors@R: person("Jameel", "Alsalam", email = "jalsalam@gmail.com", role = c("aut", "cre"))
 Description: Get data from EIA (one paragraph).
 Depends: R (>= 3.4.0)
-License: What license is it under?
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: httr, jsonlite, purrr, magrittr, dplyr, tibble

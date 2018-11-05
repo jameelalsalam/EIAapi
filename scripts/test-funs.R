@@ -53,7 +53,7 @@ resps <- map(c(2228110, 2227112), getEIAcat)
 resps2 <- transpose(resps) %>%
   simplify_all() %>%
   as_tibble() %>%
-  mutate(date = as.Date.POSIXct(date))
+  dplyr::mutate(date = as.Date.POSIXct(date))
 
 childcats <- resps2 %>%
   unnest(childcategories)
