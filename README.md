@@ -6,7 +6,7 @@ The author of this package is not affiliated with the EIA.
 
 A free API key can be obtained here: https://www.eia.gov/opendata/
 
-The EIA API includes several queyr endpoints:
+The EIA API includes several query endpoints:
  1) API Series query. For accessing data series by ID. Endpoint of form:
  
  http://api.eia.gov/series/?series_id=sssssss&api_key=YOUR_API_KEY_HERE[&num=][&out=xml|json]

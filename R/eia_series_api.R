@@ -19,8 +19,8 @@ getEIAseries <- function(ids, return = "simple") {
   stopifnot(length(ids) > 0)
   stopifnot(length(ids) < 101)
 
-  if (is.na(key)) {
-    stop("Please set variable \"key\" in the global environment with your API key") }
+ if (is.na(Sys.getenv("EIA_API_KEY"))) {
+    stop("Please set environment variable \"EIA_API_KEY\" to use this function") }
 
   url <- .url_EIA_series(ids)
 
@@ -45,7 +45,7 @@ getEIAseries <- function(ids, return = "simple") {
 
 .url_EIA_series <- function(ids, out="json") {
   ids <- paste(ids, collapse = ";")
-  url <- paste("http://api.eia.gov/series?api_key=", key, "&series_id=", ids, sep="" )
+  url <- paste("http://api.eia.gov/series?api_key=", Sys.getenv("EIA_API_KEY"), "&series_id=", ids, sep="" )
 
   url
 }

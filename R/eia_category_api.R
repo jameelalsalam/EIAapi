@@ -13,8 +13,8 @@ magrittr::`%>%`
 #' @export
 getEIAcat <- function(id) {
 
-  if (is.na(key)) {
-    stop("Please set variable \"key\" in the global environment with your API key") }
+  if (is.na(Sys.getenv("EIA_API_KEY"))) {
+    stop("Please set environment variable \"EIA_API_KEY\" to use this function") }
 
   url <- .url_EIA_cat(id)
 
@@ -78,7 +78,7 @@ getEIAcat <- function(id) {
 }
 
 .url_EIA_cat <- function(id, out="json") {
-  url <- paste("http://api.eia.gov/category?api_key=", key, "&category_id=", id, sep="" )
+  url <- paste("http://api.eia.gov/category?api_key=", Sys.getenv("EIA_API_KEY"), "&category_id=", id, sep="" )
 
   url
 }
