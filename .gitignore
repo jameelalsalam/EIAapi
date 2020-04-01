@@ -10,3 +10,9 @@ scripts/key\.R
 data/
 
 \.Rprofile
+
+docs/
+
+scripts/bulk.R
+
+scripts/cache_local.R

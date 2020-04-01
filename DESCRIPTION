@@ -8,4 +8,4 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: httr, jsonlite, purrr, magrittr, dplyr, tibble
-RoxygenNote: 6.1.0
+RoxygenNote: 7.1.0

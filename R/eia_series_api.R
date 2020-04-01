@@ -5,6 +5,8 @@
 #' @param id vector of character strings with EIA series IDs
 #' @param return flag for type of return object: simple, content, raw, or full.
 #' @importFrom magrittr %>%
+#' @import dplyr
+#' @import purrr
 #' @export
 getEIAseries <- function(ids, return = "simple") {
 
